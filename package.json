@@ -1,0 +1,17 @@
+{
+  "name": "typescript-react-redux-canvas",
+  "version": "1.0",
+  "description": "learning the trypescript react redux stack",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.8.0",
+    "react": "^15.2.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
