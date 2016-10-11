@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react"
+  },
+  "files": [
+    "./src/components/About.tsx",
+    "./src/components/Navigation.tsx",
+    "./src/components/Life.tsx",
+    "./src/components/Work.tsx",
+    "./src/index.tsx"
+  ]
+}

@@ -1,1 +1,0 @@
-module.exports = "extra js from content.js.";
