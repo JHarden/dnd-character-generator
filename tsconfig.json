@@ -5,9 +5,11 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
-    "jsx": "react"
+    "jsx": "react",
+    "experimentalDecorators": true
   },
   "files": [
+    "./src/stores/TodoStore.ts",
     "./src/builder/canvas/canvas.tsx",
     "./src/index.tsx"
   ]
