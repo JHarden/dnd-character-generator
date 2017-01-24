@@ -8,10 +8,7 @@
     "jsx": "react"
   },
   "files": [
-    "./src/components/About.tsx",
-    "./src/components/Navigation.tsx",
-    "./src/components/Life.tsx",
-    "./src/components/Work.tsx",
+    "./src/builder/canvas/canvas.tsx",
     "./src/index.tsx"
   ]
 }
