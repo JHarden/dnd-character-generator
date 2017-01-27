@@ -1,0 +1,30 @@
+.hero-sheet {
+	li{
+		list-style: none;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+
+		span{
+			color: #FF0000;
+		}
+	}
+
+	.stat{
+		padding: 0 10px;
+		border: 2px solid #521a1a;
+		width: 100px;
+		display: block;
+		float: left;
+		background: #f1d1a8;
+
+		.stat-name{
+			font-weight: bold;
+		}
+	}
+}

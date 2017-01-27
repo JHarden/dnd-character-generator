@@ -9,9 +9,12 @@
     "experimentalDecorators": true
   },
   "files": [
+    "./src/observables/Hero.ts",
     "./src/observables/toDo.ts",
+    "./src/stores/heroStore.ts",
     "./src/stores/todoStore.ts",
     "./src/builder/canvas/canvas.tsx",
+    "./src/builder/canvas/charGen.tsx",
     "./src/index.tsx"
   ]
 }
