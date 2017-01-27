@@ -1,21 +1,35 @@
-.hero-sheet {
-	li{
-		list-style: none;
+.hero-generator {
+	h1,
+	h2 {
+		font-family: "Bilbo Swash Caps", Arial, Helvetica, sans-serif;
 	}
 
+	h3,
+	span,
+	a {
+		font-family: "Coming Soon", Arial, Helvetica, sans-serif;
+	}
+
+	li {
+		list-style: none;
+	}
+}
+
+.hero-sheet {
 	h2 {
-		font-size: 1.5rem;
+		font-size: 2rem;
+		padding-left: 0;
 	}
 
 	h3 {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 
-		span{
-			color: #FF0000;
+		span {
+			color: #ff0000;
 		}
 	}
 
-	.stat{
+	.stat {
 		padding: 0 10px;
 		border: 2px solid #521a1a;
 		width: 100px;
@@ -23,8 +37,30 @@
 		float: left;
 		background: #f1d1a8;
 
-		.stat-name{
+		.stat-name {
 			font-weight: bold;
 		}
+	}
+}
+
+.col-12 {
+	width: 300px;
+	border: 2px solid #521a1a;
+	background-color: #f1d1a8;
+	height: auto;
+	margin: 20px;
+	position: relative;
+	display: block;
+
+	h2 {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	input {
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		margin-bottom: 20px;
 	}
 }
