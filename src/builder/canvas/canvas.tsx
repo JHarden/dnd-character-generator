@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TEST } from '../../config/constants';
 import { observer } from 'mobx-react';
+import { ToDo } from '../../observables/ToDo';
 
 export interface ICanvasProps {
 	store: any,
@@ -25,8 +26,8 @@ export class Canvas extends React.Component<ICanvasProps, {}> {
 	render() {
 
 		const { filter, filteredTodos, todos } = this.props.store;
-		const todoLis = filteredTodos.map( (todo:string, index:number) =>(
-			<li key={index}>{todo}</li>
+		const todoLis = filteredTodos.map( (todo:ToDo, index:number) =>(
+			<li key={todo.id}>{todo.value}</li>
 		));
 		return <span>
 			<h1>Canvas :D ! testing TODOS</h1>

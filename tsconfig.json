@@ -9,7 +9,8 @@
     "experimentalDecorators": true
   },
   "files": [
-    "./src/stores/TodoStore.ts",
+    "./src/observables/toDo.ts",
+    "./src/stores/todoStore.ts",
     "./src/builder/canvas/canvas.tsx",
     "./src/index.tsx"
   ]
