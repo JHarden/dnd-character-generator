@@ -23,11 +23,18 @@ export class Canvas extends React.Component<ICanvasProps, {}> {
 		}
 	}
 
+	private toggleComple(todo: ToDo){
+
+		todo.complete = !todo.complete;
+	}
+
 	render() {
 
-		const { filter, filteredTodos, todos } = this.props.store;
+		const { clearComplete, filter, filteredTodos, todos } = this.props.store;
 		const todoLis = filteredTodos.map( (todo:ToDo, index:number) =>(
-			<li key={todo.id}>{todo.value}</li>
+			<li key={todo.id}>{todo.value}
+			<input type="checkbox" onChange={this.toggleComple.bind(this, todo)} value="{todo.complete}" checked={todo.complete}/>
+			</li>
 		));
 		return <span>
 			<h1>Canvas :D ! testing TODOS</h1>
@@ -35,6 +42,7 @@ export class Canvas extends React.Component<ICanvasProps, {}> {
 				{ todoLis }
 			</ul>
 			<ul> { filter } </ul>
+			<a href="#" onClick={this.props.store.clearComplete} >Clear complete</a>
 			<div className="col-12">
 				<h2>Create a TODO</h2>
 				<input className="create" onKeyPress={this.createNew.bind(this)} />

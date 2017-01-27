@@ -6,7 +6,7 @@ export class ToDo {
     @observable public id : any;
     @observable public complete: boolean;
 
-    public construcor (value: string){
+    public constructor (value: string){
         this.value = value;
         this.id = Date.now();
         this.complete = false;
