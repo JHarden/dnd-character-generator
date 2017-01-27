@@ -25,7 +25,7 @@ export class Canvas extends React.Component<ICanvasProps, {}> {
 
 	private toggleComple(todo: ToDo){
 
-		todo.complete = !todo.complete;
+		this.props.store.toggleComplete(todo);
 	}
 
 	render() {

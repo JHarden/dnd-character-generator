@@ -1,6 +1,7 @@
-import { computed , observable } from 'mobx';
+import { computed , observable, action, useStrict } from 'mobx';
 import { ToDo } from '../observables/ToDo';
 
+useStrict(true);
 
 class TodoStore{
 
@@ -11,13 +12,17 @@ class TodoStore{
         return this.todos.filter((todo: ToDo) => !this.filter || matchesFilter.test(todo.value));
     };
 
-    public createTodo(value: string){
+    @action("--create todo--") createTodo(value: string){
         this.todos.push(new ToDo(value));
     };
 
-    public clearComplete = () => {
+    @action("--clear complete--") clearComplete = () => {
         const incompleteTodos = this.todos.filter((todo: ToDo) => !todo.complete);
         this.todos.replace(incompleteTodos);
+    }
+
+    @action("--toggle complete--") toggleComplete = (todo:ToDo) => {
+        todo.complete = !todo.complete;
     }
 }
 
