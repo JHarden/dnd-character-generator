@@ -57,7 +57,6 @@ export class CharGen extends React.Component<ICharGenProps, {}> {
                     { heroSheet }
                 </ul>
                 <ul> { filter } </ul>
-                <a href="#" onClick={this.props.store.clearComplete} >Clear complete</a>
                 <div className="col-12">
                     <h2>Create a Hero</h2>
                     <input className="create" onKeyPress={this.createNew.bind(this)} />
@@ -65,6 +64,9 @@ export class CharGen extends React.Component<ICharGenProps, {}> {
                 <div className="col-12">
                     <h2>Filter the Heroes</h2>
                     <input className="filter" value={filter} onChange={this.filter.bind(this)} />
+                </div>
+                  <div className="col-12">
+                    <a href="#" onClick={this.props.store.clearComplete} >Retire Selected</a>
                 </div>
 			</div>;
 	}

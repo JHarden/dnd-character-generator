@@ -28,12 +28,12 @@ export class Hero {
     }
 
     private get diceRoll(): number{
-
+        //roll 3d6 old school! :D
         return  (Math.floor( Math.random() * 6 ) + 1) + ( Math.floor( Math.random() * 6 ) + 1) + ( Math.floor( Math.random() * 6 ) + 1);
     }
 
     private get hitPointGen(): number{
-
+        //fairly random formula for generating HP
         return (Math.floor(Math.random() * this.con) + Math.floor(this.str / 2));
     }
 }

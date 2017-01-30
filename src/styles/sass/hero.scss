@@ -12,6 +12,10 @@
 
 	li {
 		list-style: none;
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
 	}
 }
 
@@ -19,9 +23,12 @@
 	h2 {
 		font-size: 2rem;
 		padding-left: 0;
+		margin-top: 1rem;
+		margin-bottom: 0;
 	}
 
 	h3 {
+		margin-top: 0;
 		font-size: 1.5rem;
 
 		span {
@@ -29,16 +36,39 @@
 		}
 	}
 
-	.stat {
-		padding: 0 10px;
-		border: 2px solid #521a1a;
-		width: 100px;
+	.stats {
+		float: left;
+
+		.stat {
+			padding: 0 10px;
+			border: 2px solid #521a1a;
+			width: 100px;
+			display: block;
+			float: left;
+			background: #f1d1a8;
+			color: rgb(45, 123, 14);
+			font-size: 1.25rem;
+			font-weight: bold;
+			font-style: italic;
+
+			.stat-name {
+				font-weight: bold;
+				color: #521a1a;
+			}
+		}
+	}
+
+	.is-alive {
 		display: block;
 		float: left;
-		background: #f1d1a8;
+		width: 50px;
+		height: auto;
 
-		.stat-name {
-			font-weight: bold;
+		input {
+			width: 15px;
+			height: 15px;
+			position: relative;
+			top: 5px;
 		}
 	}
 }
@@ -51,10 +81,24 @@
 	margin: 20px;
 	position: relative;
 	display: block;
+	float: left;
+	height: 80px;
 
 	h2 {
 		font-size: 2rem;
 		margin: 0;
+	}
+
+	a {
+		font-size: 1.5rem;
+		text-decoration: none;
+		text-align: center;
+		width: 100%;
+		display: block;
+		top: 15px;
+		position: relative;
+		font-weight: bold;
+		color: #000;
 	}
 
 	input {
