@@ -35,39 +35,55 @@ export class CharGen extends React.Component<ICharGenProps, {}> {
 		const heroSheet = filteredHeroes.map( (hero:Hero, index:number) =>(
             <li key={hero.id}>
                 <div className="hero-sheet">
-                    <h2>{hero.name}</h2>
-                    <h3>Hit Points: <span>{hero.hitpoints}</span></h3>
-                    <div className="stats">
-                        <span className="stat"><span className="stat-name">STR:</span> {hero.str}</span>
-                        <span className="stat"><span className="stat-name">DEX:</span> {hero.dex}</span>
-                        <span className="stat"><span className="stat-name">CON:</span> {hero.con}</span>
-                        <span className="stat"><span className="stat-name">WIZ:</span> {hero.wiz}</span>
-                        <span className="stat"><span className="stat-name">INT:</span> {hero.int}</span>
-                        <span className="stat"><span className="stat-name">CHA:</span> {hero.cha}</span>
+                   <div className="is-alive">
+                        <label htmlFor={'retire-'+index} className="retire-check-wrap">
+                            <input type="checkbox" id={'retire-'+index} onChange={this.toggleComple.bind(this, hero)} value="{hero.alive}" checked={hero.alive}/>
+                            <span className="active">+</span>
+                            <span className="inactive">-</span>
+                        </label>
                     </div>
-                    <div className="is-alive">
-                        <input type="checkbox" onChange={this.toggleComple.bind(this, hero)} value="{hero.alive}" checked={hero.alive}/>
+                    <div className="hero-header">
+                     <h2>{hero.name}</h2>
+                    </div>
+                    <div className="hero-data">                     
+                        <div className="hero-details">                   
+                        <h3>HP: <span>{hero.hitpoints}</span></h3>
+                        </div>
+                        <div className="stats">
+                            <span className="stat"><span className="stat-name">STR:</span> {hero.str}</span>
+                            <span className="stat"><span className="stat-name">DEX:</span> {hero.dex}</span>
+                            <span className="stat"><span className="stat-name">CON:</span> {hero.con}</span>
+                            <span className="stat"><span className="stat-name">WIZ:</span> {hero.wiz}</span>
+                            <span className="stat"><span className="stat-name">INT:</span> {hero.int}</span>
+                            <span className="stat"><span className="stat-name">CHA:</span> {hero.cha}</span>
+                        </div>                
                     </div>
                 </div>
             </li>
 		));
 		return <div className="hero-generator">
                 <h1>Hero Generator</h1>
-                <ul>
-                    { heroSheet }
-                </ul>
+                <section>
+                    <ul className="hero-party">
+                        { heroSheet }
+                    </ul>
+                </section>
+                 <section>
                 <ul> { filter } </ul>
-                <div className="col-12">
+                </section>
+                <section>
+                <div className="control-wrap">
                     <h2>Create a Hero</h2>
                     <input className="create" onKeyPress={this.createNew.bind(this)} />
                 </div>
-                <div className="col-12">
+                <div className="control-wrap">
                     <h2>Filter the Heroes</h2>
                     <input className="filter" value={filter} onChange={this.filter.bind(this)} />
                 </div>
-                  <div className="col-12">
+                  <div className="control-wrap">
                     <a href="#" onClick={this.props.store.clearComplete} >Retire Selected</a>
                 </div>
+                </section>
 			</div>;
 	}
 }
