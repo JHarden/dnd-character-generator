@@ -1,15 +1,18 @@
 import * as React from 'react';
 import { TEST } from '../../config/constants';
 import { observer } from 'mobx-react';
-import { ToDo } from '../../observables/ToDo';
 import { Hero } from '../../observables/Hero';
+import styled from 'styled-components';
 
 export interface ICharGenProps {
 	store: any,
+    children?: React.ReactChild,
+    className?: string,
 }
 
+
 @observer
-export class CharGen extends React.Component<ICharGenProps, {}> {
+class CharGen extends React.Component<ICharGenProps, {}> {
 
 
 	private filter(event: any){
@@ -22,22 +25,21 @@ export class CharGen extends React.Component<ICharGenProps, {}> {
 		if(event.which === 13){
 			this.props.store.createHero(event.target.value);
 		}
-	}
+	} 
 
-	private toggleComple(todo: ToDo){
-
-		this.props.store.toggleComplete(todo);
+    private toggleRetired(hero: Hero){
+		this.props.store.toggleComplete(hero);
 	}
 
 	render() {
 
-		const { clearComplete, filter, filteredHeroes, heroes } = this.props.store;
+		const { clearComplete, toggleComplete, filter, filteredHeroes, heroes } = this.props.store;
 		const heroSheet = filteredHeroes.map( (hero:Hero, index:number) =>(
             <li key={hero.id}>
                 <div className="hero-sheet">
                    <div className="is-alive">
                         <label htmlFor={'retire-'+index} className="retire-check-wrap">
-                            <input type="checkbox" id={'retire-'+index} onChange={this.toggleComple.bind(this, hero)} value="{hero.alive}" checked={hero.alive}/>
+                            <input type="checkbox" onChange={this.toggleRetired.bind(this, hero)} id={'retire-'+index} value="{hero.alive}" checked={hero.alive}/>
                             <span className="active">+</span>
                             <span className="inactive">-</span>
                         </label>
@@ -61,7 +63,8 @@ export class CharGen extends React.Component<ICharGenProps, {}> {
                 </div>
             </li>
 		));
-		return <div className="hero-generator">
+
+		return <div  className={this.props.className}>
                 <h1>Hero Generator</h1>
                 <section>
                     <ul className="hero-party">
@@ -87,3 +90,13 @@ export class CharGen extends React.Component<ICharGenProps, {}> {
 			</div>;
 	}
 }
+
+
+const StyledCharGen = styled(CharGen)`
+
+    background: red;
+    outline: 1px solid pink;
+
+`;
+
+export default StyledCharGen;

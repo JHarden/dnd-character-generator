@@ -24,7 +24,7 @@ export class Hero {
         this.cha = this.diceRoll;
         this.alive = true;
         this.hitpoints = this.hitPointGen;
-        console.log(this.str, this.dex, this.con, this.wiz, this.int, this.cha);
+
     }
 
     private get diceRoll(): number{

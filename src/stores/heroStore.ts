@@ -1,5 +1,4 @@
 import { computed , observable, action, useStrict } from 'mobx';
-import { ToDo } from '../observables/ToDo';
 import { Hero } from '../observables/Hero';
 
 useStrict(true);
