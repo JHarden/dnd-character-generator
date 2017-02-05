@@ -1,23 +1,23 @@
 import * as React from 'react';
-import { TEST } from '../config/constants';
-import CharGen from '../builder/canvas/charGen';
-import  heroStore  from '../stores/heroStore';
+import CharacterSheet from '../builder/characterSheet/CharacterSheet';
+import HeroEditor from '../builder/HeroEditor/HeroEditor';
+import heroStore from '../builder/heroCard/heroStore';
 import Devtools from 'mobx-react-devtools';
-import styled from "styled-components";
-import { injectGlobal } from 'styled-components'
 
 export interface IContentProps {
-	
+
 }
 
-
 export class Content extends React.Component<IContentProps, {}> {
+
 	render() {
-		return(
+
+		return (
 			<span>
-			<CharGen store={heroStore} />
-			<Devtools/>
+				<CharacterSheet store={heroStore} />
+				<HeroEditor store={heroStore} />
+				<Devtools />
 			</span>
-        );
+		);
 	}
 }

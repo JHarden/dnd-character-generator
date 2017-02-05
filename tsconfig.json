@@ -1,14 +1,18 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es5",
-    "jsx": "react",
-    "experimentalDecorators": true
-  },
-  "files": [
-    "./src/index.tsx"
-  ]
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"module": "commonjs",
+		"target": "es5",
+		"jsx": "react",
+		"experimentalDecorators": true
+	},
+	"files": [
+		"./src/builder/heroEditor/HeroEditor.tsx",
+		"./src/builder/characterSheet/CharacterSheet.tsx",
+		"./src/builder/heroCard/heroStore.ts",
+		"./src/builder/heroCard/Hero.ts",
+		"./src/index.tsx"
+	]
 }
