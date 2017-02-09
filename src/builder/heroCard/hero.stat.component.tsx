@@ -45,16 +45,16 @@ const StyledHeroStat = styled(HeroStat)`
 	.modifier{
 		
 		position: absolute;
-		right: 5px;
+		right: 0;
 		width: 30px;
 		text-align: center;
 
 		&.positive{
-			background: #55b355;
+			background: rgba(85, 179, 85, 0.5);
 		}
 
 		&.negative{
-			background: #ff5454;
+			background: rgba(255, 84, 84, 0.5);
 		}
 	}
 

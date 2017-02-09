@@ -51,11 +51,6 @@ const styledHeroCard = styled(HeroCard)`
 	transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
 	cursor: pointer;
 
-	&:hover{
-		transform: scale(1.1);
-		box-shadow: none;
-	}
-
 	.hp-card {
 		padding: 0;
 		width: 120px;
