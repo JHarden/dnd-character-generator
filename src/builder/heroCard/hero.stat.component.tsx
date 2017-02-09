@@ -13,13 +13,12 @@ class HeroStat extends React.Component<IHeroStatProps, {}> {
 
 	private calculateModifier(stat: number) {
 
-		let diff: number = (stat - 10) / 2;
+		let diff: number = Math.floor((stat - 10) / 2);
 
-		let modifierLabel: string = '';
-		let modifier: string = '';
+		let modifierLabel: string = diff > 0 ? 'positive' : diff < 0 ? 'negative' : '';
 
 		return(
-			<span className={`modifier` + modifierLabel}>{diff}</span>
+			<span className={`modifier ` + modifierLabel}>{diff}</span>
 		);
 	}
 
@@ -44,11 +43,19 @@ const StyledHeroStat = styled(HeroStat)`
 	padding-left: 5px;
 
 	.modifier{
-		background: green;
+		
 		position: absolute;
 		right: 5px;
 		width: 30px;
 		text-align: center;
+
+		&.positive{
+			background: #55b355;
+		}
+
+		&.negative{
+			background: #ff5454;
+		}
 	}
 
 	.value {
