@@ -35,7 +35,7 @@ class HeroStat extends React.Component<IHeroStatProps, {}> {
 
 const StyledHeroStat = styled(HeroStat)`
 
-	background: rgb(232, 207, 163);
+	background-color: rgb(232, 207, 163);
 	width: 115px;
 	margin: 3px 0;
 	font-size: 20px;
@@ -43,18 +43,25 @@ const StyledHeroStat = styled(HeroStat)`
 	padding-left: 5px;
 
 	.modifier{
-		
 		position: absolute;
 		right: 0;
 		width: 30px;
+		transition: background-color, 0.25s, ease-in;
+
 		text-align: center;
 
 		&.positive{
-			background: rgba(85, 179, 85, 0.5);
+			background: rgba(85, 179, 85, 0.25);
+			&:hover{
+				background: rgba(85, 179, 85, 1);
+			}
 		}
 
 		&.negative{
-			background: rgba(255, 84, 84, 0.5);
+			background: rgba(255, 84, 84, 0.25);
+			&:hover{
+				background: rgba(255, 84, 84, 1);
+			}
 		}
 	}
 

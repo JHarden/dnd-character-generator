@@ -57,12 +57,16 @@ const styledHeroCard = styled(HeroCard)`
 		margin-left: 5px;
 
 		.health-bar {
-			background: rgba(255, 84, 84, 0.5);
+			background-color: rgba(255, 84, 84, 0.5);
 			max-width: 100%;
 			display: block;
 			color: #FFF;
 			padding-left: 5px;
 			font-size: 20px;
+			transition: background-color, 0.25s, ease-in;
+			&:hover{
+				background-color: rgba(255, 84, 84, 1);
+			}
 		}
 	}
 
