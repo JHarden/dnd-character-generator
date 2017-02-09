@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { injectGlobal } from 'styled-components';
-import { Hero } from './Hero';
+import { Hero } from './hero';
 import { observer } from 'mobx-react';
+import HeroStat from './hero.stat.component';
 
 export interface IHeroCardProps {
 	hero: Hero;
@@ -25,12 +25,12 @@ class HeroCard extends React.Component<IHeroCardProps, {}> {
 				</div>
 				<div className='stat-card'>
 					<ul>
-						<li><span className='attr'>STR</span><span className='value'>{hero.str}</span></li>
-						<li><span className='attr'>DEX</span><span className='value'>{hero.dex}</span></li>
-						<li><span className='attr'>CON</span><span className='value'>{hero.con}</span></li>
-						<li><span className='attr'>WIZ</span><span className='value'>{hero.wiz}</span></li>
-						<li><span className='attr'>INT</span><span className='value'>{hero.int}</span></li>
-						<li><span className='attr'>CHA</span><span className='value'>{hero.cha}</span></li>
+						<HeroStat attr={'str'} attrVal={hero.str} />
+						<HeroStat attr={'dex'} attrVal={hero.dex} />
+						<HeroStat attr={'con'} attrVal={hero.con} />
+						<HeroStat attr={'wiz'} attrVal={hero.wiz} />
+						<HeroStat attr={'int'} attrVal={hero.int} />
+						<HeroStat attr={'cha'} attrVal={hero.cha} />
 					</ul>
 				</div>
 			</div>
@@ -54,12 +54,6 @@ const styledHeroCard = styled(HeroCard)`
 	&:hover{
 		transform: scale(1.1);
 		box-shadow: none;
-		background-color: #f7e0b8;
-
-		h2, li{
-			transition: background-color 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
-			background: #fff1d9;
-		}
 	}
 
 	.hp-card {
@@ -77,13 +71,6 @@ const styledHeroCard = styled(HeroCard)`
 		}
 	}
 
-	.value {
-		margin-left: 10px;
-		font-size: 20px;
-		font-weight: bold;
-		color: #9e8353;
-	}
-
 	h2{
 		width: 115px;
 		background: rgb(232, 207, 163);
@@ -93,7 +80,7 @@ const styledHeroCard = styled(HeroCard)`
 		text-overflow: ellipsis;
 		overflow: hidden;
 	}
-
+	
 	.stat-card{
 		margin-left: 0;
 	}
@@ -105,12 +92,6 @@ const styledHeroCard = styled(HeroCard)`
 		font-size: 16px;
 		font-weight: bold;
 		margin: 0 0 5px 5px;
-
-		li{
-			background: rgb(232, 207, 163);
-			width: 120px;
-			margin: 3px 0;
-		}
 	}
 `;
 

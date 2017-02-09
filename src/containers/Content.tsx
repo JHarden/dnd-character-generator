@@ -1,7 +1,7 @@
 import * as React from 'react';
-import CharacterSheet from '../builder/characterSheet/CharacterSheet';
-import HeroEditor from '../builder/HeroEditor/HeroEditor';
-import heroStore from '../builder/heroCard/heroStore';
+import CharacterSheet from '../builder/characterSheet/character.sheet.component';
+import HeroEditor from '../builder/HeroEditor/hero.editor.component';
+import heroStore from '../builder/heroCard/hero.store';
 import Devtools from 'mobx-react-devtools';
 import styled from 'styled-components';
 
@@ -12,7 +12,6 @@ export interface IContentProps {
 class Content extends React.Component<IContentProps, {}> {
 
 	render() {
-
 		return (
 			<div className={this.props.className}>
 				<header>
@@ -24,20 +23,18 @@ class Content extends React.Component<IContentProps, {}> {
 				<section>
 					<CharacterSheet store={heroStore} />
 				</section>
-				<Devtools />
+				<Devtools/>
 			</div>
 		);
 	}
 }
-
-
 
 const StyledContent = styled(Content)`
 
 	header{
 		h1{
 			font-family: 'Cormorant Upright', sans-serif;
-			font-size: 4rem;
+			font-size: 2.5rem;
 			margin: 0 0 1rem 0.5rem;
 			color: #9e8353;
 		}

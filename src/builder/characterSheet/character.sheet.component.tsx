@@ -1,7 +1,7 @@
 import * as React from 'react';
-import HeroCard from '../heroCard/heroCard';
+import HeroCard from '../heroCard/hero.component';
 import { observer } from 'mobx-react';
-import { Hero } from '../heroCard/Hero';
+import { Hero } from '../heroCard/hero';
 import styled from 'styled-components';
 
 

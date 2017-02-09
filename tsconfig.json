@@ -9,10 +9,10 @@
 		"experimentalDecorators": true
 	},
 	"files": [
-		"./src/builder/heroEditor/HeroEditor.tsx",
-		"./src/builder/characterSheet/CharacterSheet.tsx",
-		"./src/builder/heroCard/heroStore.ts",
-		"./src/builder/heroCard/Hero.ts",
+		"./src/builder/heroEditor/hero.editor.component.tsx",
+		"./src/builder/characterSheet/character.sheet.component.tsx",
+		"./src/builder/heroCard/hero.store.ts",
+		"./src/builder/heroCard/hero.ts",
 		"./src/index.tsx"
 	]
 }

@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { TEST } from '../../config/constants';
-import HeroCard from '../heroCard/heroCard';
+import HeroCard from '../heroCard/hero.component';
 import { observer } from 'mobx-react';
 import { Hero } from '../heroCard/Hero';
 import styled from 'styled-components';
