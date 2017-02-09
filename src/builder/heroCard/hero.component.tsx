@@ -57,7 +57,7 @@ const styledHeroCard = styled(HeroCard)`
 		margin-left: 5px;
 
 		.health-bar {
-			background: #ff5454;
+			background: rgba(255, 84, 84, 0.5);
 			max-width: 100%;
 			display: block;
 			color: #FFF;
