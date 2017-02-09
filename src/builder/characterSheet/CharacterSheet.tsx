@@ -25,9 +25,6 @@ class CharacterSheet extends React.Component<ICharacterSheet, {}> {
 
 		return (
 			<div className={this.props.className}>
-				<div className='character-sheet-header'>
-					<h2>Your Party</h2>
-				</div>
 				<div className='character-list'>
 					{heroes}
 				</div>
@@ -41,9 +38,14 @@ const StyledCharacterSheet = styled(CharacterSheet)`
 
 	.character-list{
 		display: flex;
-		border: 1px solid blue;
 		flex-direction: row;
 		justify-content: flex-start;
+		padding: 0 10px;
+		height: 240px;
+	}
+	
+	h2{
+		font-family: 'Cormorant Upright', sans-serif;
 	}
 
 `;

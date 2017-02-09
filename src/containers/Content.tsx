@@ -3,21 +3,60 @@ import CharacterSheet from '../builder/characterSheet/CharacterSheet';
 import HeroEditor from '../builder/HeroEditor/HeroEditor';
 import heroStore from '../builder/heroCard/heroStore';
 import Devtools from 'mobx-react-devtools';
+import styled from 'styled-components';
 
 export interface IContentProps {
-
+	className?: string;
 }
 
-export class Content extends React.Component<IContentProps, {}> {
+class Content extends React.Component<IContentProps, {}> {
 
 	render() {
 
 		return (
-			<span>
-				<CharacterSheet store={heroStore} />
-				<HeroEditor store={heroStore} />
+			<div className={this.props.className}>
+				<header>
+					<h1>Create Your Party</h1>
+				</header>
+				<aside>
+					<HeroEditor store={heroStore} />
+				</aside>
+				<section>
+					<CharacterSheet store={heroStore} />
+				</section>
 				<Devtools />
-			</span>
+			</div>
 		);
 	}
 }
+
+
+
+const StyledContent = styled(Content)`
+
+	header{
+		h1{
+			font-family: 'Cormorant Upright', sans-serif;
+			font-size: 4rem;
+			margin: 0 0 1rem 0.5rem;
+			color: #9e8353;
+		}
+	}
+
+	aside{
+		width: 25%;
+		float: left;
+		max-width: 225px;
+		position: relative;
+		font-family: 'Cormorant Upright', sans-serif;
+		padding-left: 10px;
+	}
+
+	section{
+		width: 75%;
+		float:left;
+	}
+
+`;
+
+export default StyledContent;

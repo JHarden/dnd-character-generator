@@ -34,9 +34,8 @@ class HeroEditor extends React.Component<IHeroEditor, {}> {
 
 		const { clearComplete, filter, heroes } = this.props.store;
 
-		return <div className={this.props.className}>
-			Hero Editor
-			<section>
+		return(
+			<div className={this.props.className}>
 				<div className='control-wrap'>
 					<h2>Create a Hero</h2>
 					<input className='create' onKeyPress={this.createNew.bind(this)} />
@@ -48,16 +47,44 @@ class HeroEditor extends React.Component<IHeroEditor, {}> {
 				<div className='control-wrap'>
 					<a href='#' onClick={this.props.store.clearComplete} >Retire Selected</a>
 				</div>
-			</section>
-		</div>;
+			</div>
+		);
 	}
 }
 
 
-const StyledHeroEditor = styled(HeroEditor) `
+const StyledHeroEditor = styled(HeroEditor)`
+	background-color: #f7e0b8;
+	border: 2px solid #9e8353;
+	height: 240px;
+	padding-left: 10px;
+	box-shadow: 6px 7px 0 1px #d8d1d1;
 
-    border: 2px solid #FF0000;
+	H2{
+		margin: 10px 0;
+		color: #9e8353;
+	}
 
+	input{
+		width: 190px;
+		height: 25px;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		border-bottom: 2px solid #9e8353;
+		background-color: #fff9e8;
+		padding-left: 10px;
+		font-family: 'Cormorant Upright', sans-serif;
+		font-size: 20px;
+	}
+
+	a{
+		font-size: 1.25rem;
+		color: #9e8353;
+		text-decoration: none;
+		position: absolute;
+		bottom: 10px;
+	}
 `;
 
 export default StyledHeroEditor;
